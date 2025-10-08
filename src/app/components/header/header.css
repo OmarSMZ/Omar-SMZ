@@ -1,0 +1,30 @@
+.navbar-nav {
+  margin: auto;      
+}
+
+.has-sub {
+  position: relative;
+}
+
+.sub {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  list-style: none;
+  padding: 8px;
+  margin: 0;
+  border: 1px solid #ccc;
+}
+
+.sub li a {
+  display: block;
+  padding: 4px 8px;
+  color: #000000;
+  text-decoration: none;
+}
+
+.has-sub:hover > .sub {
+  display: block;
+}

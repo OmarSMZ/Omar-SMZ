@@ -1,0 +1,38 @@
+
+<div class="d-flex justify-content-center align-items-center vh-100">
+
+    
+    <form action="w-25">
+        
+        <div>
+            <label for="formGroupExampleInput" class="form-label ">Sube una imagen del producto</label>
+           <input type="file" name="Photo" class="btn btn-secondary w-100" accept="recursos/*" [(ngModel)]="ProductObj.Photo">
+            
+        </div>
+        <div>
+            <br>
+                <div class="mb-3">
+               <label for="formGroupExampleInput" class="form-label ">Description</label>
+                <input type="text" name="Description" class="form-control w=100" id="formGroupExampleInput" [(ngModel)]="ProductObj.Description">
+                </div>
+        </div>
+        <div>
+            
+              <div class="mb-3">
+               <label for="formGroupExampleInput" class="form-label">Name</label>
+                <input type="text" name="name" class="form-control" id="formGroupExampleInput" [(ngModel)]="ProductObj.name">
+                </div>
+        </div>
+             <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Price</label>
+                <div class="input-group w-100">
+                    <span class="input-group-text">$</span>
+                    <input type="text" name="Price" class="form-control" id="formGroupExampleInput" [(ngModel)]="ProductObj.price">
+                </div>
+            </div>
+        <br>
+        <div>
+                <button type="button" class="btn btn-dark w-100" value="save article" (click)="onsaveRecord()">Save</button>
+        </div>
+    </form>
+</div>

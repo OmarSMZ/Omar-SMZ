@@ -1,0 +1,95 @@
+
+<main>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="/recursos/logoSinFondo.png" alt="Logo" height="50">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div>
+        </div>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+       
+       
+        <!--<li class="nav-item" *ngFor="let option of headerOptions"> <!--header menu: lo nueve, hombre etc 
+          <a class="nav-link" href="#">{{option}}</a>
+           </li>--> 
+          
+            <!-- Lo Nuevo menu -->
+            <li class="nav-item has-sub">
+              <a class="nav-link" href="#">Lo Nuevo</a>
+              <ul class="sub">
+                <li><a href="#">Lanzamientos</a></li>
+                <li><a href="#">Colecciones</a></li>
+                <li><a href="#">Ofertas</a></li>
+              </ul>
+            </li>
+
+            <!-- Hombre menu -->
+          <li class="nav-item has-sub">
+                  <a class="nav-link" href="#">Hombre</a>
+                  <ul class="sub">
+                    <li><a href="#">Playeras</a></li>
+                    <li><a href="#">Sudaderas</a></li>
+                    <li><a href="#">Pants</a></li>
+                    <li><a href="#">Short</a></li>
+                  </ul>
+                </li>
+
+                 <!-- Mujer menu -->
+          <li class="nav-item has-sub">
+                  <a class="nav-link" href="#">Mujer</a>
+                  <ul class="sub">
+                    <li><a href="#">Playeras</a></li>
+                    <li><a href="#">Sudaderas</a></li>
+                    <li><a href="#">Tops</a></li>
+                    <li><a href="#">Pants</a></li>
+                    <li><a href="#">Short</a></li>
+                    <li><a href="#">faldas</a></li>
+                  </ul>
+                </li>
+
+                 <!-- >Niño/a menu -->
+          <li class="nav-item has-sub">
+                  <a class="nav-link" href="#">Niño/a</a>
+                  <ul class="sub">
+                    <li><a href="#">Playeras</a></li>
+                    <li><a href="#">Sudaderas</a></li>
+                    <li><a href="#">Pants</a></li>
+                    <li><a href="#">Short</a></li>
+                  </ul>
+                </li>
+
+                 <!-- oferta menu -->
+          <li class="nav-item has-sub">
+                  <a class="nav-link" href="#">Ofertas</a>
+                  <ul class="sub">
+                    <li><a href="#">Playeras</a></li>
+                    <li><a href="#">Sudaderas</a></li>
+                    <li><a href="#">Tops</a></li>
+                    <li><a href="#">Pants</a></li>
+                    <li><a href="#">Short</a></li>
+                    <li><a href="#">faldas</a></li>
+                  </ul>
+                </li>
+       
+        <li class="nav-item" *ngFor="let option of headerIcons"> <!--iconos del header, carrito, favoritos --> 
+          <a class="nav-link" href="#" [innerHTML]="option"></a>
+        </li>
+  </ul>
+
+      <form class="d-flex" role="search">
+        
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">buscar</button>
+      </form>
+    </div>
+  </div>
+</nav>
+</main>
+
+<footer></footer>

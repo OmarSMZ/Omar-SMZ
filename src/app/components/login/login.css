@@ -1,0 +1,71 @@
+main{
+    display: flex;
+    justify-content:right;
+    align-items: center;
+    min-height: 100vh;
+    background: rgb(255, 255, 255);
+}
+
+.radio-container {
+  display: inline-flex;          /* Coloca los botones en fila */
+  gap: 10px;                     /* Espacio entre botones */
+  padding: 12px 16px;            /* Espacio interno del contenedor */
+  border: 2px solid #ccc;        /* Borde gris claro */
+  border-radius: 10px;           /* Bordes redondeados */
+  background-color: #f9f9f9;     /* Fondo del área */
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Hover sobre todo el contenedor */
+.radio-container:hover {
+  background-color: #f0f0f0;     /* Se aclara el fondo */
+  border-color: black;           /* Borde negro al pasar el cursor */
+}
+
+/* 🎨 ESTILOS DE LOS BOTONES */
+.custom-radio {
+  color: black;
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-weight: 500;
+  color: black;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, transform 0.1s;
+  cursor: pointer;
+}
+
+/* Cuando está seleccionado */
+.btn-check:checked + .custom-radio {
+  color: white;
+  background-color: black;
+  border-color: black;
+}
+
+/* Hover normal */
+.custom-radio:hover {
+    color: black;
+  background-color: #d9d9d9;   /* Gris claro */
+  border-color: black;
+  transform: scale(1.03);      /* Efecto sutil de agrandado */
+}
+
+/* Hover cuando está seleccionado */
+.btn-check:checked + .custom-radio:hover {
+  background-color: #333333;   /* Gris oscuro */
+  border-color: black;
+  color: white;
+}
+
+.login{
+
+  display: flex;
+
+}
+.imagen{
+  flex: 1;
+}
+
+.login img{
+  width: 100%;
+}

@@ -1,0 +1,54 @@
+
+
+
+<section class="login">
+
+  <main>
+    <div class="imagen">
+    <img src="/recursos/logoSinFondo.png" alt="">
+    </div>
+
+    <div class="login-shell">
+    
+  </div>
+
+    <div>
+      <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="of" [(ngModel)]="loginObj.selectedRole" value="User">
+    <label class="btn btn-outline-success custom-radio" for="success-outlined">User</label>
+
+    <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off" [(ngModel)]="loginObj.selectedRole" value="Admin">
+    <label class="btn btn-outline-danger custom-radio" for="danger-outlined">Admin</label>
+
+        <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
+
+        <button type="submit"class="btn btn-dark" routerLink="/home">Home</button>
+
+        <h2> login </h2>
+        <form>
+           <form class="row g-3">
+            <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Gmail</label>
+            <input type="email" class="form-control"  id="correo" [(ngModel)]="loginObj.correo" name="correo" ngModel required>
+            </div>
+          <div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Password</label>
+            <input type="password" class="form-control" id="inputPassword4" [(ngModel)]="loginObj.password" name="password" ngModel required>
+          </div>
+        </div>
+  
+        <div class="col-12">
+          <button type="submit"class="btn btn-dark " (click)="onlogin()">Iniciar sesion</button>
+        </div>
+        <div>
+          <a href="">Forgot password</a>
+        </div>
+        <div>
+          <a href="">Create account</a>
+        </div>
+        </form>
+        </form>
+    </div>
+  </main>
+</section>
+
