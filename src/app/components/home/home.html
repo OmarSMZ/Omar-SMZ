@@ -1,93 +1,20 @@
 
-
 <app-header></app-header>
-
-<app-newproduct></app-newproduct>
+<ng-container *ngIf= "isAdmin">
+<app-newproduct (productoCreado)="onsaveRecord($event)"></app-newproduct>
+</ng-container>
 <main>
     <div class="gallery">
 
+        <div class="card" *ngFor= "let product of productList">
+            <img [src]="product.Photo" [alt]="product.Descripcion" width="300" height="300">
+            
+            <div class="card_contenido">
+                <h3>{{product.name}}</h3>
+                <p>{{product.Descripcion}}</p>
+                <p>${{product.price}}</p>
+            </div>
+        </div>
+</div>
 
-<div class="card">
-    <img src="/recursos/PNML.jpeg" alt="PNML" width="300" height="300" >
-    <div class="card-content">
-        <h3>Runner</h3>
-        <p>Camisa de comprecion negra de manga larga</p>
-        <p>$ 1500</p>
-    </div>
-</div>
-<div class="card">
-    <img src="/recursos/AzulB.jpeg" alt="PNML" width="300" height="300" >
-    <div class="card-content">
-        <h3>Azul</h3>
-        <p>Camisa de comprecion azul</p>
-        <p>$ 1200</p>
-    </div>
-</div>
-<div class="card">
-    <img src="/recursos/AzulB.jpeg" alt="PNML" width="300" height="300" >
-    <div class="card-content">
-        <h3>Azul</h3>
-        <p>Camisa de comprecion azul</p>
-        <p>$ 1200</p>
-    </div>
-</div>
-<div class="card">
-    <img src="/recursos/AzulB.jpeg" alt="PNML" width="300" height="300" >
-    <div class="card-content">
-        <h3>Azul</h3>
-        <p>Camisa de comprecion azul</p>
-        <p>$ 1200</p>
-    </div>
-</div>
-<div class="card">
-    <img src="/recursos/AzulB.jpeg" alt="PNML" width="300" height="300" >
-    <div class="card-content">
-        <h3>Azul</h3>
-        <p>Camisa de comprecion azul</p>
-        <p>$ 1200</p>
-    </div>
-</div>
-<div class="card">
-    <img src="/recursos/AzulB.jpeg" alt="PNML" width="300" height="300" >
-    <div class="card-content">
-        <h3>Azul</h3>
-        <p>Camisa de comprecion azul</p>
-        <p>$ 1200</p>
-    </div>
-</div>
-<div class="card">
-    <img src="/recursos/AzulB.jpeg" alt="PNML" width="300" height="300" >
-    <div class="card-content">
-        <h3>Azul</h3>
-        <p>Camisa de comprecion azul</p>
-        <p>$ 1200</p>
-    </div>
-</div>
-<div class="card">
-    <img src="/recursos/AzulB.jpeg" alt="PNML" width="300" height="300" >
-    <div class="card-content">
-        <h3>Azul</h3>
-        <p>Camisa de comprecion azul</p>
-        <p>$ 1200</p>
-    </div>
-</div>
-</div>
-<div>
-    <table>
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Descripcion</th>
-                <th>Precio</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let article of productList">
-            <td>{{product.name}}</td>
-            <td>{{product.Descripcion}}</td>
-            <td>{{product.price}}</td>
-        </tr>
-        </tbody>
-    </table>
-</div>
 </main>

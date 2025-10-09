@@ -7,7 +7,7 @@ import { newproduct } from '../newproduct/newproduct';
 
 @Component({
   selector: 'app-login',
-  imports: [RouterLink, Home, FormsModule,Header,newproduct],
+  imports: [RouterLink, FormsModule],
   templateUrl: './login.html',
   styleUrl: './login.css'
 })
@@ -23,12 +23,12 @@ router = inject(Router);
     if(this.loginObj.correo=='01' && this.loginObj.password=='123' && this.loginObj.selectedRole == 'Admin'){
     
       this.router.navigateByUrl("/home")
-
-            
-
+      localStorage.setItem('userRole','Admin');
     }
-    else{
-      alert("Wrong credentials");
+    if(this.loginObj.correo=='02' && this.loginObj.password=='123' && this.loginObj.selectedRole == 'User'){
+    
+      this.router.navigateByUrl("/home")
+      localStorage.setItem('userRole','User');
     }
   }
 }
