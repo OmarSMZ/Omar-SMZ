@@ -1,30 +1,39 @@
+/* Elimina o comenta esta regla si la tenías, ya que mx-auto de Bootstrap se encargará */
+/*
 .navbar-nav {
-  margin: auto;      
+    margin: auto;
 }
+*/
+
+
 
 .has-sub {
-  position: relative;
+    position: relative;
 }
 
 .sub {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: white;
-  list-style: none;
-  padding: 8px;
-  margin: 0;
-  border: 1px solid #ccc;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left:0;
+    background: white;
+    list-style: none;
+    padding: 8px;
+    margin: 0;
+    border: 1px solid #ccc;
+    /* Asegura que el sub-menú también tenga un z-index alto */
+    z-index: 1001; /* Más alto que el header principal si es necesario */
 }
 
 .sub li a {
-  display: block;
-  padding: 4px 8px;
-  color: #000000;
-  text-decoration: none;
+    display: block;
+    padding: 4px 8px;
+    color: #000000;
+    text-decoration: none;
 }
 
 .has-sub:hover > .sub {
-  display: block;
+    display: block;
 }
+
+

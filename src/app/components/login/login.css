@@ -1,6 +1,6 @@
 main{
     display: flex;
-    justify-content:right;
+    justify-content: center; 
     align-items: center;
     min-height: 100vh;
     background: rgb(255, 255, 255);
@@ -57,10 +57,16 @@ main{
   color: white;
 }
 
+
 .login{
 
   display: flex;
-
+  color: black;
+  background-color: white;
+  border: 1px solid rgb(21, 21, 21);
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-weight: 500;
 }
 .imagen{
   flex: 1;
@@ -68,4 +74,35 @@ main{
 
 .login img{
   width: 100%;
+}
+.btn-rounded-accent {
+    width: 50%; /* Asegura que el botón ocupe el 100% del espacio col-12 */
+    border-radius: 20px; 
+    padding: 8px 16px; 
+    font-size: 1em;
+}
+.btn-outline-success{
+    width: 21.5%; /* Asegura que el botón ocupe el 100% del espacio col-12 */
+}
+
+
+
+.links-group a {
+    color: #000000; 
+    text-decoration: none;
+    margin: 60px; /* Espacio antes y después de cada link */
+    padding: 30; 
+    font-size: 0.95em;
+    transition: color 0.2s;
+  
+}
+
+.link-separator {
+    color: #888; 
+    margin: 0 2px; /* Espacio más pequeño para el separador */
+}
+
+h2{
+  position: relative;
+
 }

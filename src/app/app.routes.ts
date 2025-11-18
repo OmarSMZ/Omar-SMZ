@@ -6,6 +6,7 @@ import { Header } from './components/header/header';
 import { Footer } from './components/footer/footer'
 import { NgModel } from '@angular/forms';
 import { newproduct } from './components/newproduct/newproduct';
+import { Createaccount } from './components/createaccount/createaccount';
 
 
 export const routes: Routes = [
@@ -36,6 +37,10 @@ export const routes: Routes = [
     {
         path: 'newproduct',
         component: newproduct
+    },
+    {
+        path: 'createaccount',
+        component: Createaccount
     }
 ];
 

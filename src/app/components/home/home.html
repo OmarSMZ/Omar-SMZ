@@ -1,20 +1,68 @@
 
+<div class="header">
 <app-header></app-header>
+</div>
+
+
+
+<div class="carousel-container">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        
+        <div class="carousel-indicators">
+            <button 
+                *ngFor="let image of images; let i = index" 
+                type="button" 
+                data-bs-target="#carouselExampleIndicators" 
+                [attr.data-bs-slide-to]="i" 
+                [class.active]="i === 0" 
+                [attr.aria-current]="i === 0 ? 'true' : null" 
+                [attr.aria-label]="'Slide ' + (i + 1)">
+            </button>
+        </div>
+
+        <div class="carousel-inner">
+            <div *ngFor="let image of images; let i = index" 
+                 class="carousel-item" 
+                 [class.active]="i === 0">
+                
+                <img [src]="image.url" [alt]="image.alt" class="d-block w-100 carousel-img">
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+
 <ng-container *ngIf= "isAdmin">
 <app-newproduct (productoCreado)="onsaveRecord($event)"></app-newproduct>
 </ng-container>
 <main>
-    <div class="gallery">
 
-        <div class="card" *ngFor= "let product of productList">
-            <img [src]="product.Photo" [alt]="product.Descripcion" width="300" height="300">
-            
-            <div class="card_contenido">
-                <h3>{{product.name}}</h3>
-                <p>{{product.Descripcion}}</p>
-                <p>${{product.price}}</p>
-            </div>
+        <div class="gallery">
+        <div class="card" *ngFor = "let producto of productos">
+            <img [src]="producto.foto" [alt]="producto.descripcion" width="300" height="300">
+
+
+                <div class="card_contenido">
+                    <h3>{{producto.nombre}}</h3>
+                    <p>{{producto.descripcion}}</p>
+                    <p>${{producto.precio}}</p>
+                    <button *ngIf="isAdmin" (click)="onDeleteRecord(producto)" class="btn btn-sm btn-danger mt-2">Eliminar</button>
+                </div>
+
         </div>
 </div>
 
 </main>
+
+<div class="footer">
+<app-footer></app-footer>
+</div>
