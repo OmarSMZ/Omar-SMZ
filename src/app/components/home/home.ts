@@ -6,10 +6,11 @@ import { CommonModule } from '@angular/common';
 import { Productos } from '../../service/productos';
 import {Iisproductos} from '../../models/is.model';
 import { Footer } from '../footer/footer';
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [FormsModule, Header, newproduct, CommonModule,Footer],
+  imports: [FormsModule, Header, newproduct, CommonModule,Footer,RouterLink],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
@@ -26,8 +27,10 @@ export class Home implements OnInit {
   productos: Iisproductos [] = [];
 
   
-  isAdmin: boolean = false; 
+  public isAdmin: boolean = false; 
+
   constructor(private Productos: Productos ){    
+    this.checkUserRole();
   }
 
   ngOnInit(): void {
@@ -58,6 +61,13 @@ export class Home implements OnInit {
     this.productos = this.productos.filter(product => product !== productToDelete);
   }
 
-  
+  checkUserRole() {
+    // Obtener el rol guardado durante el login
+    const role = localStorage.getItem('userRole'); 
+    
+    // Si el rol es 'Admin', establecemos isAdmin a true
+    this.isAdmin = role === 'Admin';
+    console.log('Rol de Usuario:', role, '| Permisos de Admin:', this.isAdmin);
+  }
   }
  

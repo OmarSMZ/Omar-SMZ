@@ -2,8 +2,8 @@
 <div class="header">
 <app-header></app-header>
 </div>
-
-
+<!-- vista del usuario -->
+<ng-container *ngIf= "!isAdmin">
 
 <div class="carousel-container">
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -41,9 +41,7 @@
 </div>
 
 
-<ng-container *ngIf= "isAdmin">
-<app-newproduct (productoCreado)="onsaveRecord($event)"></app-newproduct>
-</ng-container>
+
 <main>
 
         <div class="gallery">
@@ -55,7 +53,6 @@
                     <h3>{{producto.nombre}}</h3>
                     <p>{{producto.descripcion}}</p>
                     <p>${{producto.precio}}</p>
-                    <button *ngIf="isAdmin" (click)="onDeleteRecord(producto)" class="btn btn-sm btn-danger mt-2">Eliminar</button>
                 </div>
 
         </div>
@@ -65,4 +62,55 @@
 
 <div class="footer">
 <app-footer></app-footer>
+</div>
+</ng-container>
+
+<!--------------------------------------------------------------------->
+<ng-container *ngIf="isAdmin">
+    <div class="admin-panel-container">
+        
+        <div class="main-admin-section">
+            
+            <div class="add-product-form-column">
+                <h3>Agregar Nuevo Producto</h3>
+            <app-newproduct (productoCreado)="onsaveRecord($event)"></app-newproduct>          
+            </div>
+
+            <div class="manage-products-list-column">
+                <h3>Gestionar Productos Existentes</h3>
+                
+                <div class="product-table-scrollable">
+                    <table class="product-management-table">
+                        <thead>
+                            <tr>
+                                <th>Foto</th>
+                                <th>Nombre</th>
+                                <th>Descripción</th>
+                                <th>Precio</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let producto of productos">
+                                <td><img [src]="producto.foto" alt="Producto" class="product-thumb"></td>
+                                <td>{{ producto.nombre }}</td>
+                                <td>{{ producto.descripcion }}</td>
+                                <td>${{ producto.precio | number:'1.2-2' }}</td>
+                                <td>
+                                    <button class="btn btn-sm btn-warning">Editar</button> 
+                                    <button class="btn btn-sm btn-danger" (click)="onDeleteRecord(producto)">Eliminar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        </div>
+</ng-container>
+
+
+<div class="footer">
+    <app-footer></app-footer>
 </div>

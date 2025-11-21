@@ -85,3 +85,75 @@ z-index: 1000;
     color: rgb(180, 180, 180);
 }
 
+/* ... (Tus estilos de usuario normal, carrusel, gallery, card, etc. Vienen primero) ... */
+
+/* ************************************************* */
+/* ESTILOS PARA EL PANEL DE ADMINISTRACIÓN */
+/* ************************************************* */
+
+/* ************************************************* */
+/* SECCIÓN PRINCIPAL: AJUSTE PARA DIVISIÓN 50/50 */
+/* ************************************************* */
+
+/* Contenedor Flexbox para el formulario y la tabla */
+.main-admin-section {
+    display: flex; 
+    gap: 30px; 
+    margin-bottom: 40px;
+    flex-wrap: wrap; 
+    /* Cambiado para estirar al inicio, dando más control a los elementos */
+    align-items: flex-start; 
+}
+
+/* Columna Izquierda: Formulario (Ajustado a 50%) */
+.add-product-form-column {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    
+    /* MODIFICACIÓN CLAVE: Ocupa el 100% menos el gap, dividiendo el espacio */
+    flex: 1 1 48%; /* 48% para dejar 2% de espacio para el 'gap' */
+    min-width: 350px; /* Ancho mínimo para que el formulario sea legible */
+}
+
+/* Columna Derecha: Tabla (Ajustado a 50%) */
+.manage-products-list-column {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    
+    /* MODIFICACIÓN CLAVE: Ocupa el 100% menos el gap, igual que la izquierda */
+    flex: 1 1 48%; /* 48% para que se equilibre con la columna izquierda */
+    min-width: 400px; /* Asegura que la tabla no sea demasiado estrecha */
+}
+
+/* ... (El resto de tus estilos CSS para tablas, botones, etc. viene aquí) ... */
+
+/* Asegúrate de mantener la media query para móviles: */
+@media (max-width: 992px) {
+    .main-admin-section {
+        flex-direction: column; /* Apilar columnas en pantallas medianas */
+    }
+    .add-product-form-column,
+    .manage-products-list-column {
+        flex: 1 1 100%; /* Ocupar todo el ancho en modo columna */
+        min-width: unset; 
+    }
+}
+
+/* Contenedor que hará scroll: Envuelve la tabla */
+.product-table-scrollable {
+    /* 1. Altura Máxima: Define la altura del área de la tabla */
+    max-height: 600px; /* Puedes ajustar este valor (e.g., 350px o 500px) */
+   
+    /* 2. Scroll Vertical: Muestra la barra de desplazamiento si el contenido excede el max-height */
+    overflow-y: auto; 
+   position: relative; 
+    /* Para manejar el scroll horizontal si el contenido es demasiado ancho */
+    overflow-x: hidden;
+    padding-top: 40px; 
+}
+
+/* ... (El resto de los estilos para la tabla, botones, carrusel de administración, y media queries) ... */
